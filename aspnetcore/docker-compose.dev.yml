@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  app:
+    image: microsoft/dotnet:2.2-sdk
+    volumes:
+      - ./app:/app/
+    working_dir: /app/
+    command: dotnet watch run
+    ports:
+      - "8080:5000"
+    depends_on:
+      - db

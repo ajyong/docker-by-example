@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    volumes:
+      - db_data:/var/opt/mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=<YourStrong!Passw0rd>
+      - MS_SQL=Express
+  app:
+    image: hello-world
+
+volumes:
+  db_data:
