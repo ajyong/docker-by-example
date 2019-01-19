@@ -3,8 +3,8 @@ version: '3'
 services:
   db:
     image: postgres:alpine
-  web:
-    image: startupideas:latest
+  app:
+    image: startupideas-django:latest
     build:
       context: .
       dockerfile: docker/Dockerfile
