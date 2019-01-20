@@ -7,8 +7,8 @@ services:
       - db_data:/var/opt/mssql
     environment:
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=<YourStrong!Passw0rd>
-      - MS_SQL=Express
+      - SA_PASSWORD=Secur3Password
+      - MSSQL_PID=Express
   app:
     image: hello-world
 

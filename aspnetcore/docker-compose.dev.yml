@@ -5,6 +5,7 @@ services:
     image: microsoft/dotnet:2.2-sdk
     volumes:
       - ./app:/app/
+      - ./docker/secrets/appsettings.json:/app/appsettings.json
     working_dir: /app/
     command: dotnet watch run
     ports:

@@ -4,13 +4,12 @@ WORKDIR /app/aspnetapp
 # copy csproj and restore as distinct layers
 COPY ./app/*.sln .
 COPY ./app/*.csproj .
+COPY ./docker/secrets/appsettings.json .
 RUN dotnet restore
 
 # copy everything else and build app
 COPY ./app/* ./
 RUN dotnet publish -c Release -o out
-RUN pwd
-
 
 FROM microsoft/dotnet:2.2-aspnetcore-runtime-alpine AS runtime
 WORKDIR /app
